@@ -6,10 +6,11 @@ The database stores `users`, `feeds`, `feed_follows`, and `posts`.
 
 `scraper.go` periodically search and insert new posts into `posts` from the RSS feeds in `feeds`.
 
-# API Documentation
+## API Documentation
 
 All the authenticaed endpoint requires `Authorization: ApiKey ${APIKey}}` in the http request header.
 
+------
 **Create User**
 
 Returns json data about a created user.
@@ -31,7 +32,7 @@ Returns json data about a created user.
   * **Code:** 201 <br />
     **Content:** Inserted user entrie in json format with APIKey included.
 
- 
+ ------
 **Get User**
 
 Returns json data about a user. Authenticated with APIKey.
@@ -49,7 +50,7 @@ Returns json data about a user. Authenticated with APIKey.
   * **Code:** 200 <br />
     **Content:** Corresponding user entrie in json format.
 
-
+------
 **Create Feed**
 
 Returns json data about a created feed.
@@ -71,7 +72,7 @@ Returns json data about a created feed.
   * **Code:** 201 <br />
     **Content:** Inserted feed entrie in json format.
 
-
+------
 **Get Feed**
 
 Returns an array of feeds in json format.
@@ -89,7 +90,7 @@ Returns an array of feeds in json format.
   * **Code:** 200 <br />
     **Content:** An array of all feeds in json format from `feeds`.
 
-
+------
 **Get Posts**
 
 Returns an array of at most 10 most recent posts by published time from all the feeds a user follows. Authenticated with APIKey.
@@ -107,7 +108,7 @@ Returns an array of at most 10 most recent posts by published time from all the 
   * **Code:** 200 <br />
     **Content:** An array of posts in json format.
 
-
+------
 **Follow a Feed**
 
 Returns json data about a created tuple in `feed_follows` table. Authenticated with APIKey.
@@ -129,7 +130,7 @@ Returns json data about a created tuple in `feed_follows` table. Authenticated w
   * **Code:** 201 <br />
     **Content:** A feed_follows tuple in json format.
 
-
+------
 **Get Followed Feeds**
 
 Returns an array of feeds the user follows. Authenticated with APIKey.
@@ -147,8 +148,8 @@ Returns an array of feeds the user follows. Authenticated with APIKey.
   * **Code:** 200 <br />
     **Content:** An array of feed_follows that with the user as the follower, in json format.
 
-
-**Unfollowed a Feed**
+------
+**Unfollow a Feed**
 
 Returns an array of feeds the user follows. Authenticated with APIKey.
 
